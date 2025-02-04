@@ -1,0 +1,41 @@
+<div class="container">
+        <h1>Formularz Osobowy</h1>
+        <form id="personalForm" action="https://usebasin.com/f/8d29a3509e28" method="post">
+            <div class="form-group">
+                <label for="name">Imię:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="color">Ulubiony kolor:</label>
+                <input type="text" id="color" name="color" required>
+            </div>
+
+            <div class="form-group">
+                <label for="food">Ulubione jedzenie:</label>
+                <input type="text" id="food" name="food" required>
+            </div>
+
+            <button type="submit">Wyślij</button>
+        </form>
+        <p id="submitMessage" class="submitted">Formularz został wysłany!</p>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const message = document.getElementById('submitMessage');
+            
+            // Pokazanie komunikatu o wysłaniu
+            message.style.display = 'block';
+            
+            // Wyczyszczenie formularza
+            form.reset();
+            
+            // Ukrycie komunikatu po 3 sekundach
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 3000);
+        }
+    </script>
